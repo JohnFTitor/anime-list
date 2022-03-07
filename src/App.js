@@ -1,9 +1,12 @@
 import React from 'react';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Anime</h1>
+      <header>
+        <Navigation />
+      </header>
     </div>
   );
 }
