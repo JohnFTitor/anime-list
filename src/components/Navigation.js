@@ -1,15 +1,22 @@
 import React from 'react';
 import { IoIosArrowBack, IoMdSettings } from 'react-icons/io';
 import { FaMicrophone } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import '../styles/navigation.scss';
 
 const Navigation = () => (
   <nav>
-    <IoIosArrowBack fill="#fff" />
+    <Link to="/">
+      <IoIosArrowBack fill="#fff" />
+    </Link>
     <h1> Current Page </h1>
     <div>
-      <FaMicrophone fill="#fff" />
-      <IoMdSettings fill="#fff" />
+      <button type="button">
+        <FaMicrophone fill="#fff" />
+      </button>
+      <button type="button">
+        <IoMdSettings fill="#fff" />
+      </button>
     </div>
   </nav>
 );
