@@ -5,14 +5,20 @@ const fetchTvAnime = createAsyncThunk(
   'tvAnime/fetchTvAnime',
   async () => {
     const response = await getAnime('tv');
-    return response;
+    return response.data;
   },
 );
 
 export { fetchTvAnime };
 
-const reducer = createReducer([], (builder) => {
-  builder.addCase(fetchTvAnime.fulfilled, (state, action) => [...state, ...action.payload.data]);
+const reducer = createReducer({
+  data: [],
+  status: 'iddle',
+}, (builder) => {
+  builder.addCase(fetchTvAnime.fulfilled, (state, action) => ({
+    data: action.payload,
+    status: 'completed',
+  }));
 });
 
 export default reducer;
