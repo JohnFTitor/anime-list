@@ -40,7 +40,7 @@ function render(
     );
   }
   Wrapper.propTypes = {
-    children: PropTypes.objectOf(String).isRequired,
+    children: PropTypes.element.isRequired,
   };
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }

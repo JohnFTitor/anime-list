@@ -10,10 +10,12 @@ const generateReducer = (name, type) => {
     },
   );
 
-  const reducer = createReducer({
+  const initialState = {
     data: [],
     status: 'iddle',
-  }, (builder) => {
+  };
+
+  const reducer = createReducer(initialState, (builder) => {
     builder.addCase(fetchAnime.fulfilled, (state, action) => ({
       data: action.payload,
       status: 'completed',
