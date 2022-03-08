@@ -1,24 +1,7 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit';
-import getAnime from '../util/APIHandling';
+import generateReducer from '../util/reducerGenerator';
 
-const fetchTvAnime = createAsyncThunk(
-  'tvAnime/fetchTvAnime',
-  async () => {
-    const response = await getAnime('tv');
-    return response;
-  },
-);
+const { fetchAnime: fetchTvAnime, reducer } = generateReducer('tvAnime', 'tv');
 
 export { fetchTvAnime };
-
-const reducer = createReducer({
-  data: [],
-  status: 'iddle',
-}, (builder) => {
-  builder.addCase(fetchTvAnime.fulfilled, (state, action) => ({
-    data: action.payload,
-    status: 'completed',
-  }));
-});
 
 export default reducer;
