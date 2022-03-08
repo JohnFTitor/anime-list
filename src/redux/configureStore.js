@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import tvAnimeReducer from './tv-anime/tvAnime';
+import tvAnimeReducer from './tvAnime/tvAnime';
 
 const store = configureStore({
   reducer: {

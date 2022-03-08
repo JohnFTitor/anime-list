@@ -5,7 +5,7 @@ const fetchTvAnime = createAsyncThunk(
   'tvAnime/fetchTvAnime',
   async () => {
     const response = await getAnime('tv');
-    return response.data;
+    return response;
   },
 );
 
