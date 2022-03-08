@@ -9,7 +9,7 @@ const handlers = [
         ctx.json({
           data: [
             {
-              mal_id: page,
+              mal_id: +page,
               url: 'string',
               images: {
                 jpg: {
@@ -28,8 +28,8 @@ const handlers = [
                 url: 'string',
                 embed_url: 'string',
               },
-              title: 'string',
-              title_english: 'string',
+              title: `Test Anime Title: ${page}`,
+              title_english: `Test Anime Title: ${page}`,
               title_japanese: 'string',
               title_synonyms: [
                 'string',
@@ -58,7 +58,7 @@ const handlers = [
               },
               duration: 'string',
               rating: 'G - All Ages',
-              score: 0,
+              score: 9.8,
               scored_by: 0,
               rank: 0,
               popularity: 0,

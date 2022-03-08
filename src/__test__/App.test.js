@@ -1,7 +1,11 @@
 import React from 'react';
 import { setupServer } from 'msw/node';
-import { render, screen } from './util/test-util';
-import App from '../App';
+import {
+  render,
+  screen,
+  waitFor,
+} from './util/test-util';
+import HomePage from '../components/HomePage';
 import handlers from './mock/handlers';
 import '@testing-library/jest-dom';
 
@@ -18,8 +22,13 @@ afterEach(() => server.resetHandlers());
 // Disable API mocking after the tests are done.
 afterAll(() => server.close());
 
-test('Retrieves data from API', async () => {
-  render(<App />);
-  const text = screen.getByText('Hello Home Page');
-  expect(text).toBeInTheDocument();
+describe('Home Page', () => {
+  test('Retrieves data from API', async () => {
+    render(<HomePage />);
+
+    const text = await waitFor(() => screen.getByText('Test Anime Title: 1'));
+    const score = screen.getAllByTestId('score')[0];
+    expect(text).toBeInTheDocument();
+    expect(score.textContent).toBe('9.8');
+  });
 });
