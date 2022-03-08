@@ -6,9 +6,6 @@ import './styles/reset.scss';
 import './styles/index.scss';
 import App from './App';
 import store from './redux/configureStore';
-import { fetchTvAnime } from './redux/tvAnime/tvAnime';
-
-store.dispatch(fetchTvAnime());
 
 ReactDOM.render(
   <React.StrictMode>
