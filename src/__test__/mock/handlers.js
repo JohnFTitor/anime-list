@@ -1,10 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { rest } from 'msw';
 
 const handlers = [
   rest.get('https://api.jikan.moe/v4/anime', (req, res, ctx) => {
     const page = req.url.searchParams.get('page');
-    console.log('Mocking');
 
     return (
       res(
