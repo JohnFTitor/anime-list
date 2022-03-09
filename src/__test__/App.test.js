@@ -103,3 +103,17 @@ describe('Navigation', () => {
     });
   });
 });
+
+describe('Details Page', () => {
+  test('Retrieves data from the specific id', async () => {
+    render(<App />);
+
+    const card = await waitFor(() => screen.getByTestId('1-card'));
+
+    fireEvent.click(card);
+
+    const sypnosis = await waitFor(() => screen.getByText(/My Story/i));
+
+    expect(sypnosis).toBeInTheDocument();
+  });
+});

@@ -16,7 +16,7 @@ const AnimeCard = (props) => {
   } = props;
 
   return (
-    <Link to={`/details/${title}`} id={id} className="anime-card">
+    <Link to={`details/${title}/${id}`} id={id} className="anime-card" data-testid={`${id}-card`}>
       <img src={imgUrl} alt={title} />
       <h2>{title}</h2>
       <h3>{titleJapanese}</h3>
