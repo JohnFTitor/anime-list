@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTvAnime } from '../redux/tvAnime/tvAnime';
+// Import Fetching and Filtering Actions
+import { fetchTvAnime, filterAnimeTv } from '../redux/tvAnime/tvAnime';
 import { fetchSpecialAnime } from '../redux/specialAnime/specialAnime';
 import { fetchMusicAnime } from '../redux/musicAnime/musicAnime';
 import { fetchOnaAnime } from '../redux/onaAnime/onaAnime';
@@ -10,7 +11,7 @@ import AnimeCard from './AnimeCard';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const { type } = useSelector((state) => state.filtering);
+  const { type, category } = useSelector((state) => state.filtering);
   const { status, dataFiltered } = useSelector((state) => state[type]);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const HomePage = () => {
         if (status === 'iddle') {
           dispatch(fetchTvAnime());
         }
+        dispatch(filterAnimeTv(category));
         break;
       }
       case 'specialAnime': {
@@ -57,7 +59,7 @@ const HomePage = () => {
         }
       }
     }
-  }, [type]);
+  }, [type, category]);
 
   return (
     <ul className="cards-container">

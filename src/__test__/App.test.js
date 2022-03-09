@@ -27,7 +27,7 @@ describe('Redux pure functions testing', () => {
   test('Change Category', () => {
     const action = changeCategory('Action');
     const initialState = {
-      category: 'All',
+      category: 'all',
       type: 'tvAnime',
     };
 
@@ -38,7 +38,7 @@ describe('Redux pure functions testing', () => {
   test('Change Type', () => {
     const action = changeType('movieAnime');
     const initialState = {
-      category: 'All',
+      category: 'all',
       type: 'tvAnime',
     };
 
