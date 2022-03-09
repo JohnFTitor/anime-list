@@ -7,4 +7,13 @@ const getAnime = async (type) => {
   return [...info.data, ...info2.data];
 };
 
+const getAnimeById = async (id) => {
+  const baseURL = `https://api.jikan.moe/v4/anime/${id}`;
+  const response = await fetch(baseURL);
+  const info = await response.json();
+  return info.data;
+};
+
+export { getAnimeById };
+
 export default getAnime;
