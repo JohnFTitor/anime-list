@@ -2,7 +2,7 @@ const CHANCE_CATEGORY = 'anime-list/filtering/CHANCE_CATEGORY';
 const CHANCE_TYPE = 'anime-list/filtering/CHANCE_TYPE';
 
 const initialState = {
-  category: 'All',
+  category: 'all',
   type: 'tvAnime',
 };
 

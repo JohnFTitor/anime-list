@@ -16,7 +16,7 @@ const generateReducer = (name, type) => {
     status: 'iddle',
   };
 
-  const changeCategory = createAction(`${name}/changeCategory`);
+  const filterAnime = createAction(`${name}/filterAnime`);
 
   const reducer = createReducer(initialState, (builder) => {
     builder.addCase(fetchAnime.fulfilled, (state, action) => ({
@@ -24,13 +24,21 @@ const generateReducer = (name, type) => {
       dataFiltered: action.payload,
       status: 'completed',
     }));
-    builder.addCase(changeCategory, (state, action) => ({
+    builder.addCase(filterAnime, (state, action) => ({
       ...state,
-      dataFiltered: state.data.filter((anime) => anime.genres.includes(action.payload)),
+      dataFiltered: action.payload === 'all' ? state.data : state.data.filter((anime) => {
+        for (let i = 0; i < anime.genres.length; i += 1) {
+          const genre = anime.genres[i];
+          if (genre.name === action.payload) {
+            return true;
+          }
+        }
+        return false;
+      }),
     }));
   });
 
-  return { fetchAnime, reducer };
+  return { filterAnime, fetchAnime, reducer };
 };
 
 export default generateReducer;

@@ -1,7 +1,7 @@
 import generateReducer from '../util/reducerGenerator';
 
-const { fetchAnime: fetchMusicAnime, reducer } = generateReducer('musicAnime', 'music');
+const { fetchAnime: fetchMusicAnime, filterAnime: filterAnimeMusic, reducer } = generateReducer('musicAnime', 'music');
 
-export { fetchMusicAnime };
+export { fetchMusicAnime, filterAnimeMusic };
 
 export default reducer;
