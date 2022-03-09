@@ -8,7 +8,7 @@ import {
 import HomePage from '../components/HomePage';
 import handlers from './mock/handlers';
 import '@testing-library/jest-dom';
-import filterinReducer, { changeCategory, changeType } from '../redux/filtering/filtering';
+import filterinReducer, { changeType } from '../redux/filtering/filtering';
 
 const server = setupServer(...handlers);
 
@@ -24,19 +24,8 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('Redux pure functions testing', () => {
-  test('Change Category', () => {
-    const action = changeCategory('Action');
-    const initialState = {
-      category: 'All',
-      type: 'tvAnime',
-    };
-
-    const newState = filterinReducer(initialState, action);
-
-    expect(newState).toEqual({ ...initialState, category: 'Action' });
-  });
   test('Change Type', () => {
-    const action = changeType('movie');
+    const action = changeType('movieAnime');
     const initialState = {
       category: 'All',
       type: 'tvAnime',

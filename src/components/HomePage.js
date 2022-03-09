@@ -57,7 +57,7 @@ const HomePage = () => {
         }
       }
     }
-  }, []);
+  }, [data]);
 
   return (
     <ul className="cards-container">
