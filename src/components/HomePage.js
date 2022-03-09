@@ -11,7 +11,7 @@ import AnimeCard from './AnimeCard';
 const HomePage = () => {
   const dispatch = useDispatch();
   const { type } = useSelector((state) => state.filtering);
-  const { status, data } = useSelector((state) => state[type]);
+  const { status, dataFiltered } = useSelector((state) => state[type]);
 
   useEffect(() => {
     switch (type) {
@@ -57,11 +57,11 @@ const HomePage = () => {
         }
       }
     }
-  }, [data]);
+  }, [type]);
 
   return (
     <ul className="cards-container">
-      {data.length > 0 ? data.map((anime) => (
+      {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
         <li key={anime.mal_id}>
           <AnimeCard
             id={anime.mal_id}

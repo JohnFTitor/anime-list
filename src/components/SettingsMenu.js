@@ -15,7 +15,7 @@ const SettingsMenu = (props) => {
   return (
     <div className="settings-menu">
       <button type="button" onClick={() => setMenu(false)}>
-        X
+        <p>X</p>
       </button>
       <form>
         <select onChange={onChangeHandler} name="type" id="type" value={type}>
