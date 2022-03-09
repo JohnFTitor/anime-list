@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { IoIosArrowBack, IoMdSettings } from 'react-icons/io';
 import { FaMicrophone } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,7 @@ import SettingsMenu from './SettingsMenu';
 
 const Navigation = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const { currentPage } = useSelector((state) => state.pageDetails);
 
   const clickHandler = () => {
     setMenuActive(true);
@@ -17,7 +19,7 @@ const Navigation = () => {
       <Link to="/">
         <IoIosArrowBack fill="#fff" />
       </Link>
-      <h1> Current Page </h1>
+      <h1>{currentPage}</h1>
       <div>
         <button type="button">
           <FaMicrophone fill="#fff" />

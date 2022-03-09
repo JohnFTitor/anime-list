@@ -7,6 +7,7 @@ import { fetchMusicAnime, filterAnimeMusic } from '../redux/musicAnime/musicAnim
 import { fetchOnaAnime, filterAnimeOna } from '../redux/onaAnime/onaAnime';
 import { fetchOvaAnime, filterAnimeOva } from '../redux/ovaAnime/ovaAnime';
 import { fetchMovieAnime, filterAnimeMovie } from '../redux/movieAnime/movieAnime';
+import { changePage } from '../redux/pageDetails/pageDetails';
 import AnimeCard from './AnimeCard';
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
   const { status, dataFiltered } = useSelector((state) => state[type]);
 
   useEffect(async () => {
+    dispatch(changePage('Home page'));
     switch (type) {
       case 'tvAnime': {
         if (status === 'iddle') {

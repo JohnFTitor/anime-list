@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { getAnimeById } from '../redux/util/APIHandling';
+import { changePage } from '../redux/pageDetails/pageDetails';
 
 const DetailsPage = () => {
-  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { title, id } = useParams();
   const [anime, setAnime] = useState({});
 
   useEffect(async () => {
     setAnime(await getAnimeById(id));
+    dispatch(changePage(title));
   }, []);
 
   return (
