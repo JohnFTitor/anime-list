@@ -106,13 +106,13 @@ describe('Navigation', () => {
 
 describe('Details Page', () => {
   test('Retrieves data from the specific id', async () => {
-    render(<HomePage />);
+    render(<App />);
 
-    const text = await waitFor(() => screen.getByText('Test Anime Title: 1'));
+    const card = await waitFor(() => screen.getByTestId('1-card'));
 
-    fireEvent.click(text);
+    fireEvent.click(card);
 
-    const sypnosis = await waitFor(() => screen.getByText('My Story'));
+    const sypnosis = await waitFor(() => screen.getByText(/My Story/i));
 
     expect(sypnosis).toBeInTheDocument();
   });

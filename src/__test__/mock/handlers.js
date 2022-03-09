@@ -205,7 +205,7 @@ const handlers = [
               popularity: 0,
               members: 0,
               favorites: 0,
-              synopsis: 'string',
+              synopsis: 'My Story is amazing',
               background: 'string',
               season: 'Summer',
               year: 0,
