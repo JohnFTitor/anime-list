@@ -103,3 +103,17 @@ describe('Navigation', () => {
     });
   });
 });
+
+describe('Details Page', () => {
+  test('Retrieves data from the specific id', async () => {
+    render(<HomePage />);
+
+    const text = await waitFor(() => screen.getByText('Test Anime Title: 1'));
+
+    fireEvent.click(text);
+
+    const sypnosis = await waitFor(() => screen.getByText('My Story'));
+
+    expect(sypnosis).toBeInTheDocument();
+  });
+});
