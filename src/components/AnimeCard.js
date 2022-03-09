@@ -31,13 +31,17 @@ const AnimeCard = (props) => {
   );
 };
 
+AnimeCard.defaultProps = {
+  year: 'Not Specified',
+};
+
 AnimeCard.propTypes = {
   id: PropTypes.number.isRequired,
   imgUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   titleJapanese: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired,
+  year: PropTypes.number,
   genres: PropTypes.arrayOf(String).isRequired,
 };
 

@@ -12,6 +12,7 @@ import specialAnimeReducer from '../../redux/specialAnime/specialAnime';
 import musicAnimeReducer from '../../redux/musicAnime/musicAnime';
 import onaAnimeReducer from '../../redux/onaAnime/onaAnime';
 import ovaAnimeReducer from '../../redux/ovaAnime/ovaAnime';
+import filterReducer from '../../redux/filtering/filtering';
 
 function render(
   ui,
@@ -25,6 +26,7 @@ function render(
         musicAnime: musicAnimeReducer,
         onaAnime: onaAnimeReducer,
         ovaAnime: ovaAnimeReducer,
+        filtering: filterReducer,
       },
     }),
     ...renderOptions

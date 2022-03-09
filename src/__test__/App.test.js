@@ -28,7 +28,7 @@ describe('Redux pure functions testing', () => {
     const action = changeCategory('Action');
     const initialState = {
       category: 'All',
-      type: 'tv',
+      type: 'tvAnime',
     };
 
     const newState = filterinReducer(initialState, action);
@@ -39,12 +39,12 @@ describe('Redux pure functions testing', () => {
     const action = changeType('movie');
     const initialState = {
       category: 'All',
-      type: 'tv',
+      type: 'tvAnime',
     };
 
     const newState = filterinReducer(initialState, action);
 
-    expect(newState).toEqual({ ...initialState, type: 'movie' });
+    expect(newState).toEqual({ ...initialState, type: 'movieAnime' });
   });
 });
 
@@ -56,5 +56,13 @@ describe('Home Page', () => {
     const score = screen.getAllByTestId('score')[0];
     expect(text).toBeInTheDocument();
     expect(score.textContent).toBe('9.8');
+  });
+  test('All cards are being displayed', async () => {
+    render(<HomePage />);
+
+    await waitFor(() => screen.getByText('Test Anime Title: 1'));
+    const cards = document.querySelectorAll('.anime-card');
+
+    expect(cards).toHaveLength(2);
   });
 });

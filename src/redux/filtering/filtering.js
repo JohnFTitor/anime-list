@@ -3,7 +3,7 @@ const CHANCE_TYPE = 'anime-list/filtering/CHANCE_TYPE';
 
 const initialState = {
   category: 'All',
-  type: 'tv',
+  type: 'tvAnime',
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,7 +28,7 @@ const changeCategory = (category) => ({
 
 const changeType = (type) => ({
   type: CHANCE_TYPE,
-  payload: type,
+  payload: `${type}Anime`,
 });
 
 export { changeCategory, changeType };

@@ -1,15 +1,61 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTvAnime } from '../redux/tvAnime/tvAnime';
+import { fetchSpecialAnime } from '../redux/specialAnime/specialAnime';
+import { fetchMusicAnime } from '../redux/musicAnime/musicAnime';
+import { fetchOnaAnime } from '../redux/onaAnime/onaAnime';
+import { fetchOvaAnime } from '../redux/ovaAnime/ovaAnime';
+import { fetchMovieAnime } from '../redux/movieAnime/movieAnime';
 import AnimeCard from './AnimeCard';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const { status, data } = useSelector((state) => state.tvAnime);
+  const { type } = useSelector((state) => state.filtering);
+  const { status, data } = useSelector((state) => state[type]);
 
   useEffect(() => {
-    if (status === 'iddle') {
-      dispatch(fetchTvAnime());
+    switch (type) {
+      case 'tvAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchTvAnime());
+        }
+        break;
+      }
+      case 'specialAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchSpecialAnime());
+        }
+        break;
+      }
+      case 'musicAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchMusicAnime());
+        }
+        break;
+      }
+      case 'ovaAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchOvaAnime());
+        }
+        break;
+      }
+      case 'onaAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchOnaAnime());
+        }
+        break;
+      }
+      case 'movieAnime': {
+        if (status === 'iddle') {
+          dispatch(fetchMovieAnime());
+        }
+        break;
+      }
+      default: {
+        if (status === 'iddle') {
+          dispatch(fetchTvAnime());
+        }
+      }
     }
   }, []);
 
