@@ -62,16 +62,17 @@ const HomePage = () => {
   return (
     <ul className="cards-container">
       {data.length > 0 ? data.map((anime) => (
-        <AnimeCard
-          key={anime.mal_id}
-          id={anime.mal_id}
-          imgUrl={anime.images.webp.large_image_url}
-          title={anime.title}
-          titleJapanese={anime.title_japanese}
-          score={anime.score}
-          year={anime.year}
-          genres={anime.genres}
-        />
+        <li key={anime.mal_id}>
+          <AnimeCard
+            id={anime.mal_id}
+            imgUrl={anime.images.webp.large_image_url}
+            title={anime.title}
+            titleJapanese={anime.title_japanese}
+            score={anime.score}
+            year={anime.year}
+            genres={anime.genres}
+          />
+        </li>
       )) : <li> Getting Animes </li>}
     </ul>
   );

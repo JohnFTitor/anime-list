@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuid } from 'uuid';
+import { Link } from 'react-router-dom';
 
 const AnimeCard = (props) => {
   const {
@@ -14,7 +15,7 @@ const AnimeCard = (props) => {
   } = props;
 
   return (
-    <li id={id} className="anime-card">
+    <Link to={`/details/${title}`} id={id} className="anime-card">
       <img src={imgUrl} alt={title} />
       <h2>{title}</h2>
       <h3>{titleJapanese}</h3>
@@ -27,7 +28,7 @@ const AnimeCard = (props) => {
           </li>
         ))}
       </ul>
-    </li>
+    </Link>
   );
 };
 
