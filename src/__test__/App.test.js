@@ -4,8 +4,10 @@ import {
   render,
   screen,
   waitFor,
+  fireEvent,
 } from './util/test-util';
 import HomePage from '../components/HomePage';
+import App from '../App';
 import handlers from './mock/handlers';
 import '@testing-library/jest-dom';
 import filterinReducer, { changeCategory, changeType } from '../redux/filtering/filtering';
@@ -64,5 +66,40 @@ describe('Home Page', () => {
     const cards = document.querySelectorAll('.anime-card');
 
     expect(cards).toHaveLength(2);
+  });
+  test('All cards are of type "tv"', async () => {
+    render(<HomePage />);
+
+    const typeArray = await waitFor(() => screen.getAllByText('tv'));
+
+    typeArray.forEach((type) => {
+      expect(type.textContent).toBe('tv');
+    });
+  });
+});
+
+describe('Navigation', () => {
+  test('Retrieves movies instead of tv animes', async () => {
+    render(<App />);
+
+    const typeArray = await waitFor(() => screen.getAllByText('tv'));
+
+    typeArray.forEach((type) => {
+      expect(type.textContent).toBe('tv');
+    });
+
+    const settingsButton = screen.getByTestId('settings');
+
+    fireEvent.click(settingsButton);
+
+    const selectType = screen.getByTestId('typeSelector');
+
+    fireEvent.change(selectType, { target: { value: 'movieAnime' } });
+
+    const newTypeArray = await waitFor(() => screen.getAllByText('movie'));
+
+    newTypeArray.forEach((type) => {
+      expect(type.textContent).toBe('movie');
+    });
   });
 });

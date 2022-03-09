@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // Import Fetching and Filtering Actions
 import { fetchTvAnime, filterAnimeTv } from '../redux/tvAnime/tvAnime';
-import { fetchSpecialAnime } from '../redux/specialAnime/specialAnime';
-import { fetchMusicAnime } from '../redux/musicAnime/musicAnime';
-import { fetchOnaAnime } from '../redux/onaAnime/onaAnime';
-import { fetchOvaAnime } from '../redux/ovaAnime/ovaAnime';
-import { fetchMovieAnime } from '../redux/movieAnime/movieAnime';
+import { fetchSpecialAnime, filterAnimeSpecial } from '../redux/specialAnime/specialAnime';
+import { fetchMusicAnime, filterAnimeMusic } from '../redux/musicAnime/musicAnime';
+import { fetchOnaAnime, filterAnimeOna } from '../redux/onaAnime/onaAnime';
+import { fetchOvaAnime, filterAnimeOva } from '../redux/ovaAnime/ovaAnime';
+import { fetchMovieAnime, filterAnimeMovie } from '../redux/movieAnime/movieAnime';
 import AnimeCard from './AnimeCard';
 
 const HomePage = () => {
@@ -14,49 +14,55 @@ const HomePage = () => {
   const { type, category } = useSelector((state) => state.filtering);
   const { status, dataFiltered } = useSelector((state) => state[type]);
 
-  useEffect(() => {
+  useEffect(async () => {
     switch (type) {
       case 'tvAnime': {
         if (status === 'iddle') {
-          dispatch(fetchTvAnime());
+          await dispatch(fetchTvAnime());
         }
         dispatch(filterAnimeTv(category));
         break;
       }
       case 'specialAnime': {
         if (status === 'iddle') {
-          dispatch(fetchSpecialAnime());
+          await dispatch(fetchSpecialAnime());
         }
+        dispatch(filterAnimeSpecial(category));
         break;
       }
       case 'musicAnime': {
         if (status === 'iddle') {
-          dispatch(fetchMusicAnime());
+          await dispatch(fetchMusicAnime());
         }
+        dispatch(filterAnimeMusic(category));
         break;
       }
       case 'ovaAnime': {
         if (status === 'iddle') {
-          dispatch(fetchOvaAnime());
+          await dispatch(fetchOvaAnime());
         }
+        dispatch(filterAnimeOva(category));
         break;
       }
       case 'onaAnime': {
         if (status === 'iddle') {
-          dispatch(fetchOnaAnime());
+          await dispatch(fetchOnaAnime());
         }
+        dispatch(filterAnimeOna(category));
         break;
       }
       case 'movieAnime': {
         if (status === 'iddle') {
-          dispatch(fetchMovieAnime());
+          await dispatch(fetchMovieAnime());
         }
+        dispatch(filterAnimeMovie(category));
         break;
       }
       default: {
         if (status === 'iddle') {
-          dispatch(fetchTvAnime());
+          await dispatch(fetchTvAnime());
         }
+        dispatch(filterAnimeTv(category));
       }
     }
   }, [type, category]);
@@ -73,6 +79,7 @@ const HomePage = () => {
             score={anime.score}
             year={anime.year}
             genres={anime.genres}
+            type={anime.type}
           />
         </li>
       )) : <li> Getting Animes </li>}

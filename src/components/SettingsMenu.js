@@ -22,7 +22,7 @@ const SettingsMenu = (props) => {
         <p>X</p>
       </button>
       <form>
-        <select onChange={onChangeHandlerType} name="type" id="type" value={type}>
+        <select onChange={onChangeHandlerType} name="type" id="type" value={type} data-testid="typeSelector">
           <option value="tvAnime">Tv</option>
           <option value="movieAnime">Movie</option>
           <option value="specialAnime">Special</option>

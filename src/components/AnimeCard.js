@@ -12,6 +12,7 @@ const AnimeCard = (props) => {
     score,
     year,
     genres,
+    type,
   } = props;
 
   return (
@@ -21,6 +22,7 @@ const AnimeCard = (props) => {
       <h3>{titleJapanese}</h3>
       <p data-testid="score">{score}</p>
       <p>{year}</p>
+      <p>{type}</p>
       <ul className="genres-container">
         {genres.map((genre) => (
           <li key={uuid()} className="genre">
@@ -44,6 +46,7 @@ AnimeCard.propTypes = {
   score: PropTypes.number.isRequired,
   year: PropTypes.number,
   genres: PropTypes.arrayOf(String).isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default AnimeCard;

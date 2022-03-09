@@ -3,6 +3,7 @@ import { rest } from 'msw';
 const handlers = [
   rest.get('https://api.jikan.moe/v4/anime', (req, res, ctx) => {
     const page = req.url.searchParams.get('page');
+    const type = req.url.searchParams.get('type');
 
     return (
       res(
@@ -34,7 +35,7 @@ const handlers = [
               title_synonyms: [
                 'string',
               ],
-              type: 'TV',
+              type,
               source: 'string',
               episodes: 0,
               status: 'Finished Airing',

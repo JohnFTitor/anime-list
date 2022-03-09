@@ -22,7 +22,7 @@ const Navigation = () => {
         <button type="button">
           <FaMicrophone fill="#fff" />
         </button>
-        <button onClick={clickHandler} type="button">
+        <button onClick={clickHandler} type="button" data-testid="settings">
           <IoMdSettings fill="#fff" />
         </button>
       </div>
