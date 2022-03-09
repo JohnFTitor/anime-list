@@ -11,7 +11,7 @@ import AnimeCard from './AnimeCard';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const { type, category } = useSelector((state) => state.filtering);
+  const { type, category } = useSelector((state) => state.pageDetails);
   const { status, dataFiltered } = useSelector((state) => state[type]);
 
   useEffect(async () => {

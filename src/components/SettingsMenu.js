@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeType, changeCategory } from '../redux/filtering/filtering';
+import { changeType, changeCategory } from '../redux/pageDetails/pageDetails';
 
 const SettingsMenu = (props) => {
   const dispatch = useDispatch();
-  const { type, category } = useSelector((state) => state.filtering);
+  const { type, category } = useSelector((state) => state.pageDetails);
   const { setMenu } = props;
 
   const onChangeHandlerType = (event) => {
