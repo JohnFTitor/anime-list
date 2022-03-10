@@ -9,6 +9,7 @@ import { fetchOvaAnime, filterAnimeOva } from '../redux/ovaAnime/ovaAnime';
 import { fetchMovieAnime, filterAnimeMovie } from '../redux/movieAnime/movieAnime';
 import { changePage } from '../redux/pageDetails/pageDetails';
 import AnimeCard from './AnimeCard';
+import '../styles/homepage.scss';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -70,22 +71,27 @@ const HomePage = () => {
   }, [type, category]);
 
   return (
-    <ul className="cards-container">
-      {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
-        <li key={anime.mal_id}>
-          <AnimeCard
-            id={anime.mal_id}
-            imgUrl={anime.images.webp.large_image_url}
-            title={anime.title}
-            titleJapanese={anime.title_japanese}
-            score={anime.score}
-            year={anime.year}
-            genres={anime.genres}
-            type={anime.type}
-          />
-        </li>
-      )) : <li> Getting Animes </li>}
-    </ul>
+    <>
+      <div className="container">
+        <p>{type}</p>
+      </div>
+      <ul className="cards-container">
+        {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
+          <li key={anime.mal_id}>
+            <AnimeCard
+              id={anime.mal_id}
+              imgUrl={anime.images.webp.large_image_url}
+              title={anime.title}
+              titleJapanese={anime.title_japanese}
+              score={anime.score}
+              year={anime.year}
+              genres={anime.genres}
+              type={anime.type}
+            />
+          </li>
+        )) : <li> Getting Animes </li>}
+      </ul>
+    </>
   );
 };
 

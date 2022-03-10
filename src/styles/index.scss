@@ -5,6 +5,28 @@
   to { transform: translateX(0); }    
 }
 
+@font-face {
+  font-family: 'Gill Sans';
+  src: local('Gill Sans Condensed Bold'), local('GillSans-CondensedBold'),
+      url('../assets/fonts/gillsans/GillSans-CondensedBold.woff2') format('woff2'),
+      url('../assets/fonts/gillsans/GillSans-CondensedBold.woff') format('woff'),
+      url('../assets/fonts/gillsans/GillSans-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: local('Gill Sans Condensed Regular'), local('GillSans-CondensedRegular'),
+      url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff2') format('woff2'),
+      url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff') format('woff'),
+      url('../assets/fonts/gillsans/GillSans-CondensedRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   font-size: 10px;
 }
@@ -26,4 +48,13 @@ header {
 main {
   grid-area: main-content;
   overflow: auto;
+}
+
+p,
+li,
+h2,
+h3 {
+  font-family: 'Gill Sans';
+  color: white;
+  font-size: 3rem;
 }

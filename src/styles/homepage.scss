@@ -1,0 +1,13 @@
+@import 'variables';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  background-color: $base-color-light;
+}
+
+.cards-container {
+  background-color: $base-color-light;
+}
