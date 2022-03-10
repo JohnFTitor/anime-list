@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { getAnimeById } from '../redux/util/APIHandling';
 import { changePage } from '../redux/pageDetails/pageDetails';
 import '../styles/detailspage.scss';
+import LoadingElement from './LoadingElement';
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
@@ -73,7 +74,7 @@ const DetailsPage = () => {
           ))}
         </ul>
       </div>
-    ) : <h2> Getting anime details... </h2>
+    ) : <LoadingElement />
     )
   );
 };

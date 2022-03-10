@@ -10,6 +10,7 @@ import { fetchMovieAnime, filterAnimeMovie } from '../redux/movieAnime/movieAnim
 import { changePage } from '../redux/pageDetails/pageDetails';
 // Import components and assets
 import AnimeCard from './AnimeCard';
+import LoadingElement from './LoadingElement';
 import '../styles/homepage.scss';
 import Silhouette from '../assets/images/silhouette.svg';
 
@@ -99,7 +100,7 @@ const HomePage = () => {
             )) : <li> No Animes Found </li>}
           </ul>
         </>
-      ) : <h2> Getting Animes </h2>}
+      ) : <LoadingElement />}
     </>
   );
 };
