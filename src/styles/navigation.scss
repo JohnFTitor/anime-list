@@ -40,6 +40,7 @@ svg {
   z-index: 2;
   background-color: $base-color-opacity-low;
   color: white;
+  animation: slide-in 0.4s ease-in-out 0s;
 
   button {
     position: absolute;
