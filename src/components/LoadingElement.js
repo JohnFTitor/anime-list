@@ -4,7 +4,7 @@ const LoadingElement = () => (
   <div className="loading-container">
     <h2> Getting your animes </h2>
     <iframe
-      title="Walking Anime Girl"
+      title="Haruki Dancing"
       src="https://giphy.com/embed/5wcu0If3I3EXe"
       width="342"
       height="480"

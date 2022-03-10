@@ -11,6 +11,7 @@ import { changePage } from '../redux/pageDetails/pageDetails';
 // Import components and assets
 import AnimeCard from './AnimeCard';
 import LoadingElement from './LoadingElement';
+import SorryElement from './SorryElement';
 import '../styles/homepage.scss';
 import Silhouette from '../assets/images/silhouette.svg';
 
@@ -97,7 +98,7 @@ const HomePage = () => {
                   type={anime.type}
                 />
               </li>
-            )) : <li> No Animes Found </li>}
+            )) : <li><SorryElement /></li>}
           </ul>
         </>
       ) : <LoadingElement />}
