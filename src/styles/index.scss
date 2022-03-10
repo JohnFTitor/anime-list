@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import 'variables';
+
+@keyframes slide-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@font-face {
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Bold'),
+    local('GillSans-CondensedBold'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Regular'),
+    local('GillSans-CondensedRegular'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 10px;
 }
@@ -10,6 +42,7 @@ html {
   grid-template-areas:
     'navigation'
     'main-content';
+  background-color: $base-color;
 }
 
 header {
@@ -19,4 +52,36 @@ header {
 main {
   grid-area: main-content;
   overflow: auto;
+}
+
+p,
+li,
+h2,
+h3 {
+  font-family: 'Gill Sans', sans-serif;
+  color: white;
+  font-size: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  display: block;
+  border: 1px solid white;
+  padding: 10px 10px 5px 10px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h2 {
+    font-size: 4.5rem;
+  }
 }

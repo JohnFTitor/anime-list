@@ -6,7 +6,7 @@ import specialAnimeReducer from './specialAnime/specialAnime';
 import musicAnimeReducer from './musicAnime/musicAnime';
 import onaAnimeReducer from './onaAnime/onaAnime';
 import ovaAnimeReducer from './ovaAnime/ovaAnime';
-import filteringReducer from './filtering/filtering';
+import pageDetailsReducer from './pageDetails/pageDetails';
 
 const store = configureStore({
   reducer: {
@@ -16,7 +16,7 @@ const store = configureStore({
     musicAnime: musicAnimeReducer,
     onaAnime: onaAnimeReducer,
     ovaAnime: ovaAnimeReducer,
-    filtering: filteringReducer,
+    pageDetails: pageDetailsReducer,
   },
   middleware: (getDefaultMiddleware) => (
     getDefaultMiddleware().concat(logger)

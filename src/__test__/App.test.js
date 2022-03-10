@@ -10,7 +10,7 @@ import HomePage from '../components/HomePage';
 import App from '../App';
 import handlers from './mock/handlers';
 import '@testing-library/jest-dom';
-import filterinReducer, { changeCategory, changeType } from '../redux/filtering/filtering';
+import pageDetailsReducer, { changeCategory, changeType, changePage } from '../redux/pageDetails/pageDetails';
 
 const server = setupServer(...handlers);
 
@@ -29,24 +29,38 @@ describe('Redux pure functions testing', () => {
   test('Change Category', () => {
     const action = changeCategory('Action');
     const initialState = {
-      category: 'all',
+      category: 'All',
       type: 'tvAnime',
+      currentPage: 'Home page',
     };
 
-    const newState = filterinReducer(initialState, action);
+    const newState = pageDetailsReducer(initialState, action);
 
     expect(newState).toEqual({ ...initialState, category: 'Action' });
   });
   test('Change Type', () => {
     const action = changeType('movieAnime');
     const initialState = {
-      category: 'all',
+      category: 'All',
       type: 'tvAnime',
+      currentPage: 'Home page',
     };
 
-    const newState = filterinReducer(initialState, action);
+    const newState = pageDetailsReducer(initialState, action);
 
     expect(newState).toEqual({ ...initialState, type: 'movieAnime' });
+  });
+  test('Change Page', () => {
+    const action = changePage('Steins;Gate');
+    const initialState = {
+      category: 'All',
+      type: 'tvAnime',
+      currentPage: 'Home page',
+    };
+
+    const newState = pageDetailsReducer(initialState, action);
+
+    expect(newState).toEqual({ ...initialState, currentPage: 'Steins;Gate' });
   });
 });
 
