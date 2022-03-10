@@ -11,6 +11,7 @@ const SettingsMenu = (props) => {
 
   const onChangeHandlerType = (event) => {
     dispatch(changeType(event.target.value));
+    setMenu(false);
   };
 
   const onChangeHandlerCategory = (event) => {

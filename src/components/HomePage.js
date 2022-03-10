@@ -84,7 +84,7 @@ const HomePage = () => {
           </div>
           <ul className="cards-container">
             {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
-              <li key={anime.mal_id}>
+              <li key={anime.mal_id} className="anime-card">
                 <AnimeCard
                   id={anime.mal_id}
                   imgUrl={anime.images.webp.large_image_url}
