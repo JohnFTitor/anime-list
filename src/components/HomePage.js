@@ -8,8 +8,10 @@ import { fetchOnaAnime, filterAnimeOna } from '../redux/onaAnime/onaAnime';
 import { fetchOvaAnime, filterAnimeOva } from '../redux/ovaAnime/ovaAnime';
 import { fetchMovieAnime, filterAnimeMovie } from '../redux/movieAnime/movieAnime';
 import { changePage } from '../redux/pageDetails/pageDetails';
+// Import components and assets
 import AnimeCard from './AnimeCard';
 import '../styles/homepage.scss';
+import Silhouette from '../assets/images/silhouette.svg';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -74,7 +76,8 @@ const HomePage = () => {
     <>
       {status === 'completed' ? (
         <>
-          <div className="container">
+          <div className="container info">
+            <img className="silhouette" src={Silhouette} alt="" />
             <p>{`Type: ${type.match(/\w+(?=Anime)/g)}`}</p>
             <p>{`Category: ${category}`}</p>
             <p>{`Results: ${dataFiltered.length}`}</p>
@@ -93,10 +96,10 @@ const HomePage = () => {
                   type={anime.type}
                 />
               </li>
-            )) : <li> Getting Animes </li>}
+            )) : <li> No Animes Found </li>}
           </ul>
         </>
-      ) : <h2 style={{ color: 'black' }}> Getting Animes </h2>}
+      ) : <h2> Getting Animes </h2>}
     </>
   );
 };

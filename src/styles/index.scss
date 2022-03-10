@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import 'variables';
 
 @keyframes slide-in {
   from { transform: translateX(-100%); }
@@ -39,6 +40,7 @@ html {
   grid-template-areas:
     'navigation'
     'main-content';
+  background-color: $base-color;
 }
 
 header {

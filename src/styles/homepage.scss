@@ -1,19 +1,39 @@
 @import 'variables';
 
-.container {
-  display: flex;
+.info {
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 35vh;
-  background-color: $base-color-light;
-
+  
   p {
     text-transform: uppercase;
     padding: 10px;
+    z-index: 2;
   }
 }
 
 .cards-container {
+  padding: 10px;
   background-color: $base-color-light;
+}
+
+.anime-card {
+  img {
+    width: 100%;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $base-color-light;
+  height: 40vh;
+}
+
+.silhouette {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
 }
