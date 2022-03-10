@@ -72,25 +72,31 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="container">
-        <p>{type}</p>
-      </div>
-      <ul className="cards-container">
-        {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
-          <li key={anime.mal_id}>
-            <AnimeCard
-              id={anime.mal_id}
-              imgUrl={anime.images.webp.large_image_url}
-              title={anime.title}
-              titleJapanese={anime.title_japanese}
-              score={anime.score}
-              year={anime.year}
-              genres={anime.genres}
-              type={anime.type}
-            />
-          </li>
-        )) : <li> Getting Animes </li>}
-      </ul>
+      {status === 'completed' ? (
+        <>
+          <div className="container">
+            <p>{`Type: ${type.match(/\w+(?=Anime)/g)}`}</p>
+            <p>{`Category: ${category}`}</p>
+            <p>{`Results: ${dataFiltered.length}`}</p>
+          </div>
+          <ul className="cards-container">
+            {dataFiltered.length > 0 ? dataFiltered.map((anime) => (
+              <li key={anime.mal_id}>
+                <AnimeCard
+                  id={anime.mal_id}
+                  imgUrl={anime.images.webp.large_image_url}
+                  title={anime.title}
+                  titleJapanese={anime.title_japanese}
+                  score={anime.score}
+                  year={anime.year}
+                  genres={anime.genres}
+                  type={anime.type}
+                />
+              </li>
+            )) : <li> Getting Animes </li>}
+          </ul>
+        </>
+      ) : <h2 style={{ color: 'black' }}> Getting Animes </h2>}
     </>
   );
 };

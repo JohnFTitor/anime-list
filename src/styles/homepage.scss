@@ -2,10 +2,16 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 35vh;
   background-color: $base-color-light;
+
+  p {
+    text-transform: uppercase;
+    padding: 10px;
+  }
 }
 
 .cards-container {
