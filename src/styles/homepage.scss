@@ -5,6 +5,7 @@
 
   p {
     text-transform: uppercase;
+    text-align: center;
     padding: 10px;
     z-index: 2;
   }
@@ -24,17 +25,6 @@
 
 h2 {
   margin-bottom: 5px;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.box {
-  display: block;
-  border: 1px solid white;
-  padding: 10px 10px 5px 10px;
 }
 
 .anime-card {
@@ -76,6 +66,7 @@ h2 {
     .box {
       background-color: $base-color-ligth-low;
       color: $base-color;
+      border: 1px solid $base-color;
     }
   }
 
