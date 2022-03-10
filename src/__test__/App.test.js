@@ -29,7 +29,7 @@ describe('Redux pure functions testing', () => {
   test('Change Category', () => {
     const action = changeCategory('Action');
     const initialState = {
-      category: 'all',
+      category: 'All',
       type: 'tvAnime',
       currentPage: 'Home page',
     };
@@ -41,7 +41,7 @@ describe('Redux pure functions testing', () => {
   test('Change Type', () => {
     const action = changeType('movieAnime');
     const initialState = {
-      category: 'all',
+      category: 'All',
       type: 'tvAnime',
       currentPage: 'Home page',
     };
@@ -53,7 +53,7 @@ describe('Redux pure functions testing', () => {
   test('Change Page', () => {
     const action = changePage('Steins;Gate');
     const initialState = {
-      category: 'all',
+      category: 'All',
       type: 'tvAnime',
       currentPage: 'Home page',
     };

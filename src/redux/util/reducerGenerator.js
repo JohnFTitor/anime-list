@@ -26,7 +26,7 @@ const generateReducer = (name, type) => {
     }));
     builder.addCase(filterAnime, (state, action) => ({
       ...state,
-      dataFiltered: action.payload === 'all' ? state.data : state.data.filter((anime) => {
+      dataFiltered: action.payload === 'All' ? state.data : state.data.filter((anime) => {
         for (let i = 0; i < anime.genres.length; i += 1) {
           const genre = anime.genres[i];
           if (genre.name === action.payload) {
