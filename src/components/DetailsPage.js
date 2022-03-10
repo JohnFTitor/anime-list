@@ -29,6 +29,16 @@ const DetailsPage = () => {
             <li key={uuid()} className="box genre-box">{genre.name}</li>
           ))}
         </ul>
+        <h3 className="title"> Trailer </h3>
+        {anime.trailer.embed_url ? (
+          <iframe
+            src={anime.trailer.embed_url}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : <p>{'We couldn\'t find any link. Sorry :('}</p>}
         <h3 className="title"> Airing Information </h3>
         <div>
           <p className="box details-box">
@@ -42,24 +52,14 @@ const DetailsPage = () => {
           </p>
           <p className="box details-box">{`Status: ${anime.status ? anime.status : 'Not Specified'}`}</p>
         </div>
-        <h3 className="title"> More Information </h3>
-        <div>
-          <p>{`Rating: ${anime.rating ? anime.rating : 'Not Specified'}`}</p>
-          <p>{`Score: ${anime.score}`}</p>
-          <p>{`Season: ${anime.season ? anime.season : 'Not Specified'}`}</p>
-        </div>
         <h3 className="title"> Synopsis </h3>
         <p className="synopsis">{anime.synopsis}</p>
-        <h3 className="title"> Trailer </h3>
-        {anime.trailer.embed_url ? (
-          <iframe
-            src={anime.trailer.embed_url}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        ) : <p>{'We couldn\'t find any link. Sorry :('}</p>}
+        <h3 className="title"> More Information </h3>
+        <div>
+          <p className="box details-box">{`Rating: ${anime.rating ? anime.rating : 'Not Specified'}`}</p>
+          <p className="box details-box">{`Score: ${anime.score}`}</p>
+          <p className="box details-box">{`Season: ${anime.season ? anime.season : 'Not Specified'}`}</p>
+        </div>
         <h3 className="title"> Producers </h3>
         <ul className="row genres">
           {anime.producers.map((producer) => (
