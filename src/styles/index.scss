@@ -3,29 +3,31 @@
 
 @keyframes slide-in {
   from { transform: translateX(-100%); }
-  to { transform: translateX(0); }    
+  to { transform: translateX(0); }
 }
 
 @font-face {
-  font-family: 'Gill Sans';
-  src: local('Gill Sans Condensed Bold'), local('GillSans-CondensedBold'),
-      url('../assets/fonts/gillsans/GillSans-CondensedBold.woff2') format('woff2'),
-      url('../assets/fonts/gillsans/GillSans-CondensedBold.woff') format('woff'),
-      url('../assets/fonts/gillsans/GillSans-CondensedBold.ttf') format('truetype');
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Bold'),
+    local('GillSans-CondensedBold'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gill Sans';
-  src: local('Gill Sans Condensed Regular'), local('GillSans-CondensedRegular'),
-      url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff2') format('woff2'),
-      url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff') format('woff'),
-      url('../assets/fonts/gillsans/GillSans-CondensedRegular.ttf') format('truetype');
+  font-family: 'Gill Sans', sans-serif;
+  src:
+    local('Gill Sans Condensed Regular'),
+    local('GillSans-CondensedRegular'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff2') format('woff2'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.woff') format('woff'),
+    url('../assets/fonts/gillsans/GillSans-CondensedRegular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 html {
@@ -56,7 +58,7 @@ p,
 li,
 h2,
 h3 {
-  font-family: 'Gill Sans';
+  font-family: 'Gill Sans', sans-serif;
   color: white;
   font-size: 3rem;
 }
@@ -64,7 +66,6 @@ h3 {
 .row {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .box {

@@ -2,13 +2,14 @@
 
 .info {
   flex-direction: column;
-  
+
   p {
     text-transform: uppercase;
     padding: 10px;
     z-index: 2;
   }
 }
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -28,7 +29,6 @@ h2 {
 .row {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .box {
@@ -48,14 +48,14 @@ h2 {
   flex-direction: column;
   justify-content: flex-end;
   box-shadow: 3px 3px 3px 1px $base-color;
-  
+
   p,
   li,
   h3 {
     font-size: 2.5rem;
     margin-bottom: 10px;
   }
-  
+
   img {
     position: absolute;
     top: 0;
