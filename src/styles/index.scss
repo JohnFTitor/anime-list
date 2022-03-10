@@ -60,3 +60,15 @@ h3 {
   color: white;
   font-size: 3rem;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.box {
+  display: block;
+  border: 1px solid white;
+  padding: 10px 10px 5px 10px;
+}
