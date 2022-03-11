@@ -2,7 +2,7 @@
 
 # Anime List
 
-> This website was built using React and Redux. The main objective was to fetch data from an external API using the thunk middleware within the redux store, holding different states for each part of the app and filtering data based on user parameters. 
+> This website was built using React and Redux. The main objective was to fetch data from the [Jikan API](https://jikan.moe/) using the thunk middleware within the redux store, holding different states for each part of the app and filtering data based on user parameters. 
 
 ![Preview](./preview.gif)
 
