@@ -1,0 +1,75 @@
+@import 'variables';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $base-color;
+  padding: 2rem 1rem;
+  font-family: 'Lato', sans-serif;
+
+  h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    padding: 5px;
+  }
+
+  div {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  z-index: 3;
+  background-color: $base-color-opacity-low;
+  color: white;
+  animation: slide-in 0.4s ease-in-out 0s;
+
+  button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
+    padding-top: 3rem;
+
+    p {
+      font-size: 3rem;
+      font-weight: 600;
+      padding-bottom: 3rem;
+    }
+
+    select {
+      width: 100%;
+      font-family: 'Lato', sans-serif;
+      font-size: 2.5rem;
+      background-color: $base-color-ligth-low;
+      padding: 5px 10px;
+      border: none;
+      box-shadow: 5px 5px 5px 2px $base-color-opacity-low;
+    }
+  }
+}
