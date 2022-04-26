@@ -18,9 +18,17 @@ const SettingsMenu = (props) => {
     dispatch(changeCategory(event.target.value));
   };
 
+  const closeSettings = (event) => {
+    const { parentNode } = event.currentTarget;
+    parentNode.style.animation = 'slide-out 0.5s ease-in-out 0s';
+    setTimeout(() => {
+      setMenu(false);
+    }, 400);
+  };
+
   return (
     <div className="settings-menu">
-      <button type="button" onClick={() => setMenu(false)}>
+      <button type="button" onClick={closeSettings}>
         <MdClose stroke="#fff" fill="#fff" strokeWidth="1" />
       </button>
       <form>
