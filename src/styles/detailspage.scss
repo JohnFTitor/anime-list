@@ -16,7 +16,10 @@
   .synopsis {
     font-size: 2rem;
     line-height: 1.3;
-    padding: 10px;
+
+    p {
+      padding: 10px;
+    }
   }
 
   > * {
@@ -66,12 +69,14 @@
 .title {
   font-size: 4rem;
   color: white;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
   border-bottom: 1px solid $outline;
 
   @include for-laptop {
     text-align: center;
     padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   @include for-big-laptop {
@@ -120,4 +125,41 @@ iframe {
       margin-left: 30px;
     }
   }
+}
+
+.stats {
+  > * {
+    margin: 20px 0;
+  }
+
+  @include for-laptop {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "airing synopsis"
+    "info synopsis"
+    "producers studios";
+  }
+}
+
+.airing {
+  grid-area: airing;
+}
+
+.synopsis {
+  grid-area: synopsis;
+}
+
+.more-info {
+  grid-area: info;
+}
+
+.producers {
+  grid-area: producers;
+}
+
+.studios {
+  grid-area: studios;
 }
