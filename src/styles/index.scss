@@ -47,7 +47,7 @@ html {
   grid-template-areas:
     'navigation'
     'main-content';
-  background-color: $base-color;
+  background-color: $background;
 }
 
 header {
@@ -64,7 +64,7 @@ li,
 h2,
 h3 {
   font-family: 'Gill Sans', sans-serif;
-  color: white;
+  color: $primary;
   font-size: 3rem;
 }
 
@@ -75,7 +75,7 @@ h3 {
 
 .box {
   display: block;
-  border: 1px solid white;
+  border: 1px solid $outline;
   padding: 5px;
 }
 

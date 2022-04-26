@@ -16,7 +16,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px;
-  background-color: $base-color-light;
+  background-color: $background;
 
   @media screen and (max-width: 320px) {
     grid-template-columns: 1fr;
@@ -31,13 +31,14 @@ h2 {
   position: relative;
   width: 100%;
   height: 450px;
-  background-color: $base-color;
+  background-color: $tertiary-container;
   margin-bottom: 30px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  box-shadow: 3px 3px 3px 1px $base-color;
+  box-shadow: 3px 6px 6px 1px $on-tertiary-low;
+  border-radius: 20px;
 
   p,
   li,
@@ -54,6 +55,7 @@ h2 {
     width: 100%;
     object-fit: contain;
     z-index: -1;
+    border-radius: 20px;
 
     @media screen and (max-width: 320px) {
       object-fit: cover;
@@ -64,9 +66,10 @@ h2 {
     justify-content: space-between;
 
     .box {
-      background-color: $base-color-ligth-low;
-      color: $base-color;
-      border: 1px solid $base-color;
+      background-color: $secondary;
+      color: $on-secondary;
+      border-radius: 15px;
+      border: 1px solid $outline;
     }
   }
 
@@ -75,7 +78,7 @@ h2 {
   }
 
   .details {
-    background-color: $base-color-opacity-low;
+    background-color: $background-low;
     padding: 10px;
     box-shadow: 1px 3px 3px 3px;
   }
@@ -85,9 +88,10 @@ h2 {
     top: 0;
     right: 0;
     font-size: 4rem;
-    background-color: white;
+    background-color: $on-primary-container;
     box-shadow: 3px 3px 3px 1px;
-    color: $base-color;
+    color: $on-secondary;
+    border-radius: 10px 0 10px 10px;
   }
 }
 
@@ -96,7 +100,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $base-color-light;
+  background-color: $primary-container;
   height: 40vh;
 }
 

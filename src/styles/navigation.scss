@@ -4,14 +4,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $base-color;
+  background-color: $primary-container-low;
   padding: 2rem 1rem;
   font-family: 'Lato', sans-serif;
 
   h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 300;
+    color: $primary;
+    font-size: 2.7rem;
+    font-weight: 500;
     text-align: center;
     padding: 5px;
   }
@@ -38,8 +38,7 @@ svg {
   align-items: center;
   padding: 50px;
   z-index: 3;
-  background-color: $base-color-opacity-low;
-  color: white;
+  background-color: $secondary-container-low;
   animation: slide-in 0.4s ease-in-out 0s;
 
   button {
@@ -60,16 +59,19 @@ svg {
       font-size: 3rem;
       font-weight: 600;
       padding-bottom: 3rem;
+      color: $secondary;
     }
 
     select {
       width: 100%;
       font-family: 'Lato', sans-serif;
       font-size: 2.5rem;
-      background-color: $base-color-ligth-low;
+      color: $secondary;
+      border-radius: 5px;
+      background-color: $tertiary-container;
       padding: 5px 10px;
       border: none;
-      box-shadow: 5px 5px 5px 2px $base-color-opacity-low;
+      box-shadow: 5px 5px 5px 2px $on-tertiary-low;
     }
   }
 }

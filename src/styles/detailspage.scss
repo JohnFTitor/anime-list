@@ -40,6 +40,7 @@
 
 .genres {
   gap: 10px;
+  justify-content: center;
 
   li {
     font-family: 'Gill Sans', sans-serif;
@@ -51,15 +52,18 @@
 }
 
 .genre-box {
-  background-color: $base-color-ligth-low;
-  color: $base-color;
-  border: 1px solid $base-color;
+  background-color: $on-primary-container;
+  color: $background;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 1px solid $outline;
 }
 
 .title {
   font-size: 4rem;
+  color: white;
   padding-bottom: 5px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $outline;
 }
 
 iframe {
