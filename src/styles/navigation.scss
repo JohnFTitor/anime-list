@@ -47,6 +47,10 @@ svg {
     top: 20px;
   }
 
+  p {
+    color: $secondary;
+  }
+
   form {
     display: flex;
     height: 100%;
@@ -59,7 +63,6 @@ svg {
       font-size: 3rem;
       font-weight: 600;
       padding-bottom: 3rem;
-      color: $secondary;
     }
 
     select {
@@ -73,5 +76,25 @@ svg {
       border: none;
       box-shadow: 5px 5px 5px 2px $on-tertiary-low;
     }
+  }
+}
+
+.signature {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  bottom: 20px;
+  flex-wrap: wrap;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  p {
+    font-size: 2.5rem;
+    font-weight: 600;
   }
 }

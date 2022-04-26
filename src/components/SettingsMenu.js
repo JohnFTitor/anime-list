@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MdClose } from 'react-icons/md';
+import { AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeType, changeCategory } from '../redux/pageDetails/pageDetails';
 
@@ -61,6 +62,15 @@ const SettingsMenu = (props) => {
           </select>
         </label>
       </form>
+      <div className="signature">
+        <p> Made by JohnFTitor</p>
+        <a href="https://github.com/JohnFTitor" target="_blank" rel="noreferrer">
+          <AiFillGithub fill="#e8eaf8" />
+        </a>
+        <a href="https://twitter.com/johnftitor" target="_blank" rel="noreferrer">
+          <AiFillTwitterCircle fill="#e8eaf8" />
+        </a>
+      </div>
     </div>
   );
 };
