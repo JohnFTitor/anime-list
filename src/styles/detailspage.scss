@@ -51,6 +51,8 @@
 
 .details-box {
   padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .genre-box {
@@ -66,11 +68,29 @@
   color: white;
   padding-bottom: 5px;
   border-bottom: 1px solid $outline;
+
+  @include for-laptop {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  @include for-big-laptop {
+    font-size: 5rem;
+  }
 }
 
 iframe {
   width: 100%;
+  box-sizing: border-box;
   aspect-ratio: 16/9;
+  
+  @include for-laptop {
+    padding: 50px;
+  }
+
+  @include for-big-laptop {
+    max-height: 900px;
+  }
 }
 
 .image-container {
