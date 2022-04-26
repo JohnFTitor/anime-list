@@ -20,16 +20,20 @@ const DetailsPage = () => {
   return (
     (anime.title ? (
       <div className="anime-details">
-        <img src={anime.images.webp.large_image_url} alt={anime.title} />
-        <div className="anime-description">
-          <h2>{anime.title}</h2>
-          <h3>{anime.title_japanese}</h3>
+        <div className="anime-info">
+          <div className="image-container">
+            <img src={anime.images.webp.large_image_url} alt={anime.title} />
+          </div>
+          <div className="anime-description">
+            <h2>{anime.title}</h2>
+            <h3>{anime.title_japanese}</h3>
+            <ul className="row genres">
+              {anime.genres.map((genre) => (
+                <li key={uuid()} className="box genre-box">{genre.name}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <ul className="row genres">
-          {anime.genres.map((genre) => (
-            <li key={uuid()} className="box genre-box">{genre.name}</li>
-          ))}
-        </ul>
         <h3 className="title"> Trailer </h3>
         {anime.trailer.embed_url ? (
           <iframe
