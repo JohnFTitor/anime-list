@@ -33,7 +33,7 @@ const DetailsPage = () => {
         <h3 className="title"> Trailer </h3>
         {anime.trailer.embed_url ? (
           <iframe
-            src={anime.trailer.embed_url}
+            src={anime.trailer.embed_url.replace('&autoplay=1', '')}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
