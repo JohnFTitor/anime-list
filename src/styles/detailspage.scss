@@ -1,6 +1,43 @@
 @import 'variables';
 @import 'mixins';
 
+.stats {
+  > * {
+    margin: 20px 0;
+  }
+
+  @include for-laptop {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "airing synopsis"
+      "info synopsis"
+      "producers studios";
+  }
+}
+
+.airing {
+  grid-area: airing;
+}
+
+.synopsis {
+  grid-area: synopsis;
+}
+
+.more-info {
+  grid-area: info;
+}
+
+.producers {
+  grid-area: producers;
+}
+
+.studios {
+  grid-area: studios;
+}
+
 .anime-details {
   display: flex;
   flex-direction: column;
@@ -88,7 +125,7 @@ iframe {
   width: 100%;
   box-sizing: border-box;
   aspect-ratio: 16/9;
-  
+
   @include for-laptop {
     padding: 50px;
   }
@@ -127,41 +164,4 @@ iframe {
   }
 
   animation: slide-left 1s cubic-bezier(0.075, 0.82, 0.165, 1.2);
-}
-
-.stats {
-  > * {
-    margin: 20px 0;
-  }
-
-  @include for-laptop {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: 
-    "airing synopsis"
-    "info synopsis"
-    "producers studios";
-  }
-}
-
-.airing {
-  grid-area: airing;
-}
-
-.synopsis {
-  grid-area: synopsis;
-}
-
-.more-info {
-  grid-area: info;
-}
-
-.producers {
-  grid-area: producers;
-}
-
-.studios {
-  grid-area: studios;
 }

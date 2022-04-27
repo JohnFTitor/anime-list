@@ -10,7 +10,7 @@ const SettingsMenu = (props) => {
 
   const closeSettings = (event) => {
     const { parentNode } = event.currentTarget;
-    parentNode.style.animation = 'slide-out 0.5s ease-in-out 0s';
+    parentNode.style.animation = 'slide-out 0.5s cubic-bezier(0.215, 0.610, 0.355, 1) 0s';
     setTimeout(() => {
       setMenu(false);
     }, 400);

@@ -18,7 +18,7 @@
 }
 
 @keyframes slide-down {
-  from { transform: translateY(-100%);}
+  from { transform: translateY(-100%); }
   to { transform: translateY(0); }
 }
 
@@ -78,19 +78,11 @@ header {
 main {
   grid-area: main-content;
   overflow: auto;
-  scrollbar-width: 10px;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;
-
-  @include for-laptop {
-    -ms-overflow-style: block;  /* IE and Edge */
-    scrollbar-width: block;
-  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 main::-webkit-scrollbar {
-  display: none;  
+  display: none;
 
   @include for-laptop {
     display: block;

@@ -42,7 +42,6 @@ h2 {
   box-shadow: 3px 6px 6px 1px $on-tertiary-low;
   border-radius: 20px;
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 2);
-
   animation: slide-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
 
   p,
@@ -61,8 +60,7 @@ h2 {
     object-fit: contain;
     z-index: -1;
     border-radius: 20px;
-
-  animation: fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
+    animation: fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
 
     @media screen and (max-width: 320px) {
       object-fit: cover;
@@ -88,9 +86,7 @@ h2 {
     background-color: $background-low;
     padding: 10px;
     box-shadow: 1px 3px 3px 3px;
-
     animation: fade-in 2s cubic-bezier(0.2, 0.6, 0.8, 1);
-
   }
 
   .score {
@@ -102,7 +98,6 @@ h2 {
     box-shadow: 3px 3px 3px 1px;
     color: $on-secondary;
     border-radius: 10px 0 10px 10px;
-
     animation: slide-in 1s cubic-bezier(0.2, 0.6, 0.8, 1), fade-in 1s cubic-bezier(0.2, 0.6, 0.8, 1);
   }
 }
