@@ -91,3 +91,8 @@ h3 {
     text-align: center;
   }
 }
+
+button:hover,
+select:hover {
+  cursor: pointer;
+}

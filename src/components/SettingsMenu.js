@@ -3,17 +3,13 @@ import PropTypes from 'prop-types';
 import { MdClose } from 'react-icons/md';
 import { AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeType, changeCategory } from '../redux/pageDetails/pageDetails';
+import { changeCategory } from '../redux/pageDetails/pageDetails';
+import TypeSelector from './TypeSelector';
 
 const SettingsMenu = (props) => {
   const dispatch = useDispatch();
-  const { type, category } = useSelector((state) => state.pageDetails);
+  const { category } = useSelector((state) => state.pageDetails);
   const { setMenu } = props;
-
-  const onChangeHandlerType = (event) => {
-    dispatch(changeType(event.target.value));
-    setMenu(false);
-  };
 
   const onChangeHandlerCategory = (event) => {
     dispatch(changeCategory(event.target.value));
@@ -33,17 +29,7 @@ const SettingsMenu = (props) => {
         <MdClose stroke="#fff" fill="#fff" strokeWidth="1" />
       </button>
       <form>
-        <label htmlFor="type">
-          <p>Anime Type</p>
-          <select onChange={onChangeHandlerType} name="type" id="type" value={type} data-testid="typeSelector">
-            <option value="tvAnime">Tv</option>
-            <option value="movieAnime">Movie</option>
-            <option value="specialAnime">Special</option>
-            <option value="ovaAnime">Ova</option>
-            <option value="onaAnime">Ona</option>
-            <option value="musicAnime">Music</option>
-          </select>
-        </label>
+        <TypeSelector setMenu={setMenu} label="Anime Type" />
         <label htmlFor="category">
           <p>Anime Category</p>
           <select onChange={onChangeHandlerCategory} name="category" id="category" value={category}>
