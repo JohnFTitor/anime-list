@@ -14,6 +14,7 @@ nav {
     font-weight: 500;
     text-align: center;
     padding: 5px;
+    animation: slide-in 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   }
 
   div {
@@ -25,6 +26,7 @@ nav {
 svg {
   width: 25px;
   height: 25px;
+  animation: fade-in 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .settings-menu {
@@ -89,15 +91,17 @@ svg {
 
 .nav-selector {
   display: flex;
-
-
+  
+  
   label {
     display: flex;
+    align-items: center;
     margin-right: 30px;
     
     p {
       margin-right: 30px;
     }
+    animation: slide-down 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 

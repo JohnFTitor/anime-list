@@ -125,6 +125,8 @@ iframe {
       margin-left: 30px;
     }
   }
+
+  animation: slide-left 1s cubic-bezier(0.075, 0.82, 0.165, 1.2);
 }
 
 .stats {
