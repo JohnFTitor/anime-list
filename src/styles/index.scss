@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import 'variables';
+@import 'mixins';
 
 @keyframes slide-in {
   from { transform: translateX(-100%); }
@@ -57,6 +58,36 @@ header {
 main {
   grid-area: main-content;
   overflow: auto;
+  scrollbar-width: 10px;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+
+  @include for-laptop {
+    -ms-overflow-style: block;  /* IE and Edge */
+    scrollbar-width: block;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main::-webkit-scrollbar {
+  display: none;  
+
+  @include for-laptop {
+    display: block;
+    width: 10px;
+  }
+}
+
+main::-webkit-scrollbar-track {
+  background-color: $background-low;
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: $secondary;
+}
+
+main::-webkit-scrollbar-thumb:hover {
+  background-color: $on-tertiary-low;
 }
 
 p,
