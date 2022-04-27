@@ -64,18 +64,6 @@ svg {
       font-weight: 600;
       padding-bottom: 3rem;
     }
-
-    select {
-      width: 100%;
-      font-family: 'Lato', sans-serif;
-      font-size: 2.5rem;
-      color: $secondary;
-      border-radius: 5px;
-      background-color: $tertiary-container;
-      padding: 5px 10px;
-      border: none;
-      box-shadow: 5px 5px 5px 2px $on-tertiary-low;
-    }
   }
 }
 
@@ -97,4 +85,30 @@ svg {
     font-size: 2.5rem;
     font-weight: 600;
   }
+}
+
+.nav-selector {
+  display: flex;
+
+
+  label {
+    display: flex;
+    margin-right: 30px;
+    
+    p {
+      margin-right: 30px;
+    }
+  }
+}
+
+select {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  color: $secondary;
+  border-radius: 5px;
+  background-color: $tertiary-container;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 5px 5px 5px 2px $on-tertiary-low;
 }

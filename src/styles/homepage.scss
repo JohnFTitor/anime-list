@@ -30,6 +30,7 @@ h2 {
 .anime-card {
   position: relative;
   width: 100%;
+  max-width: 450px;
   height: 450px;
   background-color: $tertiary-container;
   margin-bottom: 30px;
