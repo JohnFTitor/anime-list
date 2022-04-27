@@ -1,0 +1,7 @@
+@mixin for-laptop {
+  @media screen and (min-width: 1024px) { @content; }
+}
+
+@mixin for-big-laptop {
+  @media screen and (min-width: 1440px) { @content; }
+}

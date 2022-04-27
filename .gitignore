@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintrc.json
-.stylelintrc.json
 
 # Local Netlify folder
 .netlify

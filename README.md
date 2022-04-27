@@ -4,7 +4,13 @@
 
 > This website was built using React and Redux. The main objective was to fetch data from the [Jikan API](https://jikan.moe/) using the thunk middleware within the redux store, holding different states for each part of the app and filtering data based on user parameters. 
 
-![Preview](./preview.gif)
+## Desktop Preview
+
+![Desktop Preview](./desktop_preview.gif)
+
+## Mobile Preview
+
+![Mobile Preview](./mobile_preview.gif)
 
 Have you ever felt like you wanted to watch a new Anime, but nothing seemed to catch your attention? No need to worry anymore! Here's a short but concise list of the 50 most scored animes for 5 types (Making a total of 250 Animes!) from which you can pick one you'll like to see. Additionally, you can check the list type to enjoy the best tracks used in the Anime industry! If you enjoy the Japanese animation industry, then you'll enjoy this fan page.
 

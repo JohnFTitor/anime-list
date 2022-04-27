@@ -4,16 +4,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $base-color;
+  background-color: $primary-container-low;
   padding: 2rem 1rem;
   font-family: 'Lato', sans-serif;
 
   h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: 300;
+    color: $primary;
+    font-size: 2.7rem;
+    font-weight: 500;
     text-align: center;
     padding: 5px;
+    animation: slide-in 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   }
 
   div {
@@ -25,6 +26,27 @@ nav {
 svg {
   width: 25px;
   height: 25px;
+  animation: fade-in 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.signature {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  bottom: 20px;
+  flex-wrap: wrap;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  p {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
 }
 
 .settings-menu {
@@ -38,14 +60,17 @@ svg {
   align-items: center;
   padding: 50px;
   z-index: 3;
-  background-color: $base-color-opacity-low;
-  color: white;
-  animation: slide-in 0.4s ease-in-out 0s;
+  background-color: $secondary-container-low;
+  animation: slide-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 
   button {
     position: absolute;
     right: 20px;
     top: 20px;
+  }
+
+  p {
+    color: $secondary;
   }
 
   form {
@@ -61,15 +86,33 @@ svg {
       font-weight: 600;
       padding-bottom: 3rem;
     }
-
-    select {
-      width: 100%;
-      font-family: 'Lato', sans-serif;
-      font-size: 2.5rem;
-      background-color: $base-color-ligth-low;
-      padding: 5px 10px;
-      border: none;
-      box-shadow: 5px 5px 5px 2px $base-color-opacity-low;
-    }
   }
+}
+
+.nav-selector {
+  display: flex;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    p {
+      margin-right: 30px;
+    }
+
+    animation: slide-down 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+select {
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  color: $secondary;
+  border-radius: 5px;
+  background-color: $tertiary-container;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 5px 5px 5px 2px $on-tertiary-low;
 }
